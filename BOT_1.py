@@ -5,13 +5,14 @@ bot = telebot.TeleBot('5466784826:AAHtQMhMk4P-vH5qCaks8QPmhKO2P6eX3f0')
 
 @bot.message_handler(commands=['start'])
 def website(message):
-    markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
+    markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=3)
     vladikawkaz = types.KeyboardButton('Владикавказ')
     georgievsk = types.KeyboardButton('Георгиевск')
     stavropol = types.KeyboardButton('Ставрополь')
     doc = types.KeyboardButton('Документация')
     nevinnomissk = types.KeyboardButton('Невинномысск')
-    markup.add(vladikawkaz, georgievsk, stavropol, doc, nevinnomissk)
+    vopros_jndtn = types.KeyboardButton('Вопрос ответ')
+    markup.add(vladikawkaz, georgievsk, stavropol, doc, nevinnomissk, vopros_jndtn)
 
     bot.send_message(message.chat.id, 'Нажмите на интересующюю вас кнопку', reply_markup=markup)
 
@@ -44,6 +45,9 @@ def start(message):
         bot.send_message(message.chat.id, 'Документация по боту')
         dock = open('doc_bot.txt', 'rb')
         bot.send_document(message.chat.id, dock)
+
+    if message.text == ('Вопрос ответ'):
+        markup = types.InlineKeyboardButton(url=)
 
 
 bot.polling(none_stop=True)

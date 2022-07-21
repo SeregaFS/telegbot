@@ -46,6 +46,6 @@ def start(message):
         dock = open('doc_bot.txt', 'rb')
         bot.send_document(message.chat.id, dock)
 
- 
+ sdfghkl;
 
 bot.polling(none_stop=True)

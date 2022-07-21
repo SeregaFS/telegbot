@@ -1,6 +1,7 @@
 import telebot
 from telebot import types
 
+
 bot = telebot.TeleBot('5466784826:AAHtQMhMk4P-vH5qCaks8QPmhKO2P6eX3f0')
 
 @bot.message_handler(commands=['start'])
@@ -46,6 +47,6 @@ def start(message):
         dock = open('doc_bot.txt', 'rb')
         bot.send_document(message.chat.id, dock)
 
- 
+
 
 bot.polling(none_stop=True)

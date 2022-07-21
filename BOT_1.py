@@ -46,8 +46,6 @@ def start(message):
         dock = open('doc_bot.txt', 'rb')
         bot.send_document(message.chat.id, dock)
 
-    if message.text == ('Вопрос ответ'):
-        markup = types.InlineKeyboardButton(url=)
-
+ 
 
 bot.polling(none_stop=True)

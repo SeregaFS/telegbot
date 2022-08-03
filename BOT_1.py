@@ -24,7 +24,7 @@ def start(message):
         markup = types.InlineKeyboardMarkup()
         markup.add(types.InlineKeyboardButton("Посетить веб сайт", url="https://www.avito.ru/vladikavkaz/kvartiry/sdam/posutochno/-ASgBAgICAkSSA8gQ8AeSUg?cd=1"))
         bot.send_message(message.chat.id, 'Результат', reply_markup=markup)
-    elif message.text == 'Владикавказ':
+    elif message.text != ["Владикавказ", "Ставрополь"]:
         bot.send_message(message.chat.id, 'Работай кнопками')
 
     if message.text == 'Георгиевск':

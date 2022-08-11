@@ -1,13 +1,13 @@
 from aiogram.utils import executor
 from cret_bot import dp
 from data_base import sqlite_db
-
+from hendlers import client, admin, other
 
 async def on_startup(_):
     print('Бот вышел в онлайн')
     sqlite_db.sql_start()
 
-from hendlers import client, admin, other
+
 
 client.register_handlers_client(dp)
 admin.register_handlers_admin(dp)

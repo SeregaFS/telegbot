@@ -39,7 +39,7 @@ async def load_photo(message: types.Message, state: FSMContext):
         async with state.proxy() as data:
             data['photo'] = message.photo[0].file_id
         await FSMAdmin.next()
-        await message.reply("Теперь веди название")
+        await message.reply("Теперь введи название")
 
 #Ловим второй ответ
 #@dp.message_hadler(state=FSMAdmin.name)
@@ -61,7 +61,7 @@ async def load_description(message: types.Message, state: FSMContext):
 
 #Ловим последний ответ и используем полученные данные
 #@dp.message_hadler(state=FSMAdmin.price)
-async def load_price(message: types.Message, state: FSMContext):
+async def load_price(message : types.Message, state: FSMContext):
     if message.from_user.id == ID:
         async with state.proxy() as data:
             data['price'] = float(message.text)
@@ -93,9 +93,6 @@ async def delete_item(message: types.Message):
             await bot.send_photo(message.from_user.id, ret[0], f'{ret[1]}\nОписание: {ret[2]}\nЦена {ret[-1]}')
             await bot.send_message(message.from_user.id, text='^^^', reply_markup=InlineKeyboardMarkup().\
                                    add(InlineKeyboardButton(f'Удалить {ret[1]}', callback_data=f'del {ret[1]}')))
-
-
-
 
 #Регестрируем хендлеры
 def register_handlers_admin(dp : Dispatcher):

@@ -1,3 +1,4 @@
+import pytz
 from aiogram import Bot
 import config
 from aiogram.dispatcher import Dispatcher

@@ -6,7 +6,7 @@ from data_base import sqlite_db
 
 
 # **************************************КЛИЕНТСКАЯ ЧАСТЬ*********************************************************
-# @dp.message_handler(commands=['start', 'help'])
+#@dp.message_handler(commands=['start', 'help'])
 async def command_start(message : types.Message):
     try:
         await bot.send_message(message.from_user.id, 'Выберите интересующую вас информацию', reply_markup=kb_client)

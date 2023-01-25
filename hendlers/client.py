@@ -18,9 +18,9 @@ async def command_start(message : types.Message):
 async def pizza_open_command(message : types.Message):
     await bot.send_message(message.from_user.id, 'Вс-Чт с 9:00 до 20:00, Пт-Сб с 10:00 до 23:00')
 
-#@dp.message_handler(commands=['Адрес'])
+#@dp.message_handler(commands=['Адрес и телефон'])
 async def pizza_place_command(message : types.Message):
-    await bot.send_message(message.from_user.id, 'ул. 50 Лет ВЛКСМ 22')
+    await bot.send_message(message.from_user.id, 'ул. 50 Лет ВЛКСМ 22 8 8002000600')
 
 #@dp.message_handler(commands=['МЕНЮ'])
 async def pizza_menu_command(message : types.Message):
